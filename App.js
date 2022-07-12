@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { View, StyleSheet } from 'react-native';
+import "react-native-reanimated"
 
 import Home from "./src/pages/Home"
 
