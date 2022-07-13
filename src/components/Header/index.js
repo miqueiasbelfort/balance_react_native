@@ -17,11 +17,39 @@ const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight * 2 : 
 export default function Header({name}) {
   return (
     <View style={styles.container}>
-      <View 
+      <MotiView 
         style={styles.content}
-        
+        from={{
+          traslateY: -150,
+          opacity: 0,
+        }}
+        animate={{
+          traslateY: 0,
+          opacity: 1
+        }}
+        transition={{
+          type: "timing",
+          duration: 800,
+          delay: 300,
+        }}
       >
-        <Text style={styles.username}>{name}</Text>
+        <MotiText 
+          style={styles.username}
+          from={{
+            translateX: -300,
+          }}
+          animate={{
+            translateX: 0
+          }}
+          transition={{
+            type: "timing",
+            duration: 800,
+            delay: 800,
+          }}
+        >
+          {name}
+        </MotiText>
+
         <TouchableOpacity 
             activeOpacity={0.9}
             style={styles.buttomUser}
@@ -32,7 +60,7 @@ export default function Header({name}) {
                 color="#fff"
             />
         </TouchableOpacity>
-      </View>
+      </MotiView>
     </View>
   )
 }
